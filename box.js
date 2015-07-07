@@ -143,9 +143,9 @@ var internals = {
 		var cells = Pluck(panels, "cells")
 		
 		return {
-			positions: Flatten( positions, true ),
-			uvs:       Flatten( uvs, true ),
-			cells:     Flatten( internals.offsetCellIndices( panels ), true )
+			positions: Chunk(Flatten( positions, true ), 3),
+			uvs:       Chunk(Flatten( uvs, true ), 3),
+			cells:     Chunk(Flatten( internals.offsetCellIndices( panels ), true ), 3)
 		}
 	},
 	
